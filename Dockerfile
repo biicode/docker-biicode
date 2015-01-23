@@ -11,10 +11,10 @@ MAINTAINER David Sanchez <david.sanchez@biicode.com>
 RUN \
   apt-get update && \
   apt-get install -y build-essential && \
-  apt-get install -y wget && \
-  wget http://apt.biicode.com/install.sh && \
-  chmod +x install.sh && \
-  ./install.sh
+  apt-get install -y wget
+
+RUN wget https://s3.amazonaws.com/biibinaries/release/2.1.1/bii-ubuntu-64_2_1_1.deb
+RUN dpkg -i bii-ubuntu-64_2_1_1.deb
 
 # Create a user.
 RUN groupadd -f biiuser
