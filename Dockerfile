@@ -17,13 +17,7 @@ RUN wget https://s3.amazonaws.com/biibinaries/release/2.2/bii-ubuntu-64_2_2.deb 
   dpkg -i bii-ubuntu-64_2_2.deb && \
   rm bii-ubuntu-64_2_2.deb
 
-# Create a user.
-RUN groupadd -f biiuser
-RUN useradd -m -d /home/biiuser -s /bin/bash -c "biiuser docker dev" -g biiuser biiuser
-RUN echo "biiuser ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/biiuser
-
 # Set environment.
-USER biiuser
 WORKDIR /home/biiuser
 ENV HOME /home/biiuser
 RUN bii setup:cpp
