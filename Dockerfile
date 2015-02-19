@@ -13,9 +13,9 @@ RUN \
   apt-get install -y build-essential wget && \
   rm -rf /var/lib/apt/lists/*
 
-RUN wget https://s3.amazonaws.com/biibinaries/release/2.2/bii-ubuntu-64_2_2.deb && \
-  dpkg -i bii-ubuntu-64_2_2.deb && \
-  rm bii-ubuntu-64_2_2.deb
+RUN wget https://s3.amazonaws.com/biibinaries/release/2.4.1/bii-ubuntu-64_2_4_1.deb && \
+  dpkg -i bii-ubuntu-64_2_4_1.deb && \
+  rm bii-ubuntu-64_2_4_1.deb
 
 # Set environment.
 WORKDIR /home/biiuser
